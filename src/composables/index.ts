@@ -1,1 +1,2 @@
-export { usePlacesStore } from "./usePlacesStore"
+export { useMapStore } from "./useMapStore";
+export { usePlacesStore } from "./usePlacesStore";
