@@ -14,8 +14,6 @@ export default defineComponent({
             if (isUserLocationReady.value) {
                 nextTick(() => initMap());
             }
-
-            console.log("userLocation is not defined");
         });
 
         watch(isUserLocationReady, () => {
@@ -25,8 +23,8 @@ export default defineComponent({
         });
 
         const initMap = () => {
-            if (!mapElement.value) throw new Error("mapElement no exist");
-            if (!userLocation.value) throw new Error("userLocation no exist");
+            if (!mapElement.value) throw new Error("initMap, mapElement no exist");
+            if (!userLocation.value) throw new Error("initMap, userLocation no exist");
 
             const map = new Mapboxgl.Map({
                 container: mapElement.value, // container ID

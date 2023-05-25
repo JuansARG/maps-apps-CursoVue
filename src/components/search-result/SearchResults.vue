@@ -4,7 +4,7 @@
 
     <div 
         v-if="isLoadingPlaces"    
-        class="aler alert-primary text-center p-2">
+        class="aler alert-success text-center p-2">
         <h5 class="fw-bold pt-1">Cargando</h5>
         <span>Espere por favor...</span>
     </div>
@@ -23,7 +23,10 @@
                 <h5>{{ place.text }}</h5>
                 <p>{{ place.place_name }}</p>
                 <div align="right">
-                    <button class="btn btn-outline-primary btn-sm">
+                    <button 
+                        class="btn btn-sm"
+                        :class="( place.id === activePlace ) ? 'btn-success' : 'btn-outline-success'"
+                        @click.self="getRouteDirections(place)">
                         Direcciones
                     </button>
                 </div>
@@ -42,5 +45,9 @@ h5 {
 }
 p {
     font-size: 10px;
+}
+.active{
+    border-color: #42b983;
+    background-color: #42b983;
 }
 </style>

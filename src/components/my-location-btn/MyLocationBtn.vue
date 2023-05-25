@@ -1,7 +1,7 @@
 <template>
     <button 
         v-if="isBtnReady"
-        class="btn btn-primary"
+        class="btn btn-success"
         @click="onMyLocationClick">
             Ir a mi ubicación
     </button>
@@ -35,7 +35,7 @@ export default defineComponent({
 <style scoped>
 button {
     position: fixed;
-    top: 30px;
-    right: 30px;
+    top: 12px;
+    right: 20px;
 }
 </style>
